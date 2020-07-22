@@ -1,25 +1,35 @@
 import {NgModule} from '@angular/core';
 
-import { MatInput } from '@angular/material/input';
-import { MatFormField } from '@angular/material/form-field';
-import { MatLabel } from '@angular/material/form-field/label';
-import { MatButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule  } from '@angular/material/card';
+import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
+//import { MatCardActionsModule } from '@angular/material/';
+//import { MatCardHeaderModule } from '@angular/material';
+// import {  } from '@angular/material/card';
 
 @NgModule({
   imports: [
-    MatFormField,
-    MatLabel,
-    MatInput,
-    MatButton,
-    MatIcon,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
   ],
   exports: [
-    MatFormField,
-    MatLabel,
-    MatInput,
-    MatButton,
-    MatIcon,
-  ]
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatIconModule,
+    MatCardModule
+  ],
+  providers: [
+    {
+      provide: MATERIAL_SANITY_CHECKS,
+      useValue: false
+    }
+  ],
 })
 export class MaterialModule {}

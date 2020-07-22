@@ -1,0 +1,10 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.news-container{
+    margin: 1rem 0;
+    flex: 1;
+    min-width: 300px; 
+    max-width: 600px;
+}
+.news-card>img{
+    /* max-width: 300px; */
+}

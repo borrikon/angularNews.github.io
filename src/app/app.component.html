@@ -1,16 +1,17 @@
-<div class="container">
+<div class="container ">
   <h1 class="title">News</h1>
-  <!-- <mat-form-field class="form-field">
-    <mat-label>Search news</mat-label>
-    <input matInput type="text" [(ngModel)]="value">
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field> -->
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Search news</mat-label>
+      <input matInput (input)="changeValue($event)" placeholder="some news" [value]="this.value">
+    </mat-form-field>
+  </form>
   <div class="news-container">
-    <app-news-item></app-news-item>
-    <app-news-item></app-news-item>
-    <app-news-item></app-news-item>
-    <app-news-item></app-news-item>
+    <app-news-item
+    *ngFor="let item of newsArray"
+    [item]="item"
+    >
+    </app-news-item>
+    <app-news-element></app-news-element>
   </div>
 </div>
