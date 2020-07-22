@@ -1,0 +1,14 @@
+.container{
+    align-items: center;
+    padding: 1rem 5rem;
+}
+.form-field {
+    width: 200px;
+  }
+.title{
+    font-size: 62px;
+}
+.news-container{
+    width: 100%;
+    max-width: 1600px;
+}
