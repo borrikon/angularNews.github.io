@@ -13,6 +13,9 @@ import { NewsElementComponent } from './news-element/news-element.component';
 import { NewsServiceService } from './news-service.service';
 
 
+import { SearchPipe } from './search.pipe';
+
+
 import { MaterialModule } from './material.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,11 +23,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule  } from '@angular/material/card';
 import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
+import { NewsListComponent } from './news-list/news-list.component';
 
 
 const appRoutes: Routes = [
   {path: "", component: AppComponent},
-  {path: "news", component: NewsItemComponent},
+  {path: "news", component: NewsElementComponent},
   {path: "**", component: NotFoundComponent}
 ]
 
@@ -33,7 +37,9 @@ const appRoutes: Routes = [
     AppComponent,
     NewsItemComponent,
     NotFoundComponent,
-    NewsElementComponent
+    NewsElementComponent,
+    SearchPipe,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,

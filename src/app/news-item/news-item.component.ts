@@ -13,6 +13,5 @@ export class NewsItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.item)
   }
 }

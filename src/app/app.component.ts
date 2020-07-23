@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private news: NewsServiceService){ }
 
-  value: string = '';
+  searchStr: string = ''
   result: any;
   newsArray: any;
 
@@ -22,9 +22,5 @@ export class AppComponent {
         this.newsArray = this.result.articles
         console.log('component app', this.newsArray)
     })
-  }
-
-  changeValue(event: any){
-    this.value = event.target.value;
   }
 }

@@ -1,6 +1,6 @@
 .container{
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 1rem 2rem;
 }
 .form-field {
     width: 200px;
@@ -15,4 +15,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.mat-form-field{
+    width: 100%;
+    max-width: 500px;
 }
