@@ -1,0 +1,12 @@
+.news-container{
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.mat-form-field{
+    width: 100%;
+    max-width: 500px;
+}

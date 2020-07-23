@@ -1,18 +1,13 @@
 <div class="container ">
-  <h1 class="title">News</h1>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Search news</mat-label>
-      <input matInput name="search"  placeholder="some news" [(ngModel)]="searchStr">
-    </mat-form-field>
-  </form>
-  <div class="news-container">
-    <app-news-item
-    *ngFor="let item of newsArray | search: searchStr"
-    [item]="item"
-    >
-    </app-news-item>
+  <div>
+    <h1 class="title">News</h1>
+  </div>
+  <div >
     <router-outlet></router-outlet>
-    <!-- <app-news-element></app-news-element> -->
+  </div>
+  <div *ngIf="!location" class="button-container "  >
+    <button mat-raised-button color="accent" (click)="changePage('prew')" >Prew</button>
+    <div class="number">{{ pageNumber }}</div>
+    <button mat-raised-button color="accent" (click)="changePage('next')" >Next</button>
   </div>
 </div>

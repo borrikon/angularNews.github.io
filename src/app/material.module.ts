@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule  } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 //import { MatCardActionsModule } from '@angular/material/';
 //import { MatCardHeaderModule } from '@angular/material';
@@ -16,14 +17,16 @@ import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   exports: [
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [
     {

@@ -9,18 +9,36 @@ import { NewsServiceService } from './news-service.service';
 })
 export class AppComponent {
 
-  constructor(private news: NewsServiceService){ }
-
-  searchStr: string = ''
+  constructor(private news: NewsServiceService){ 
+    
+  }
+  
   result: any;
-  newsArray: any;
+  newsArray: any
+  pageNumber: number = 1
+  
 
   ngOnInit() {
-    this.news.search()
+   
+  }
+  
+
+  changePage(next){
+    if(next === 'next'){
+      this.pageNumber ++
+    }else{
+        this.pageNumber === 1 ? null : this.pageNumber --
+    }
+    this.news.search(this.pageNumber)
       .subscribe((res)=>{
-        this.result = res
-        this.newsArray = this.result.articles
-        console.log('component app', this.newsArray)
+      this.result = res
+      this.newsArray = this.result.articles
+      this.news.collection_of_news = this.newsArray
+      this.news.setCollection(this.newsArray)
     })
+  }
+
+  get location(){
+    return window.location.href.indexOf('/news') > -1
   }
 }

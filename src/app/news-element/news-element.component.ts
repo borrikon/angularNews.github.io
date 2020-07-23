@@ -10,9 +10,18 @@ export class NewsElementComponent implements OnInit {
 
   constructor(private news: NewsServiceService) { }
 
-  ngOnInit(): void {
-    
-  }
+  result: any;
+  newsArray: any;
 
-  title: string = 'title'
+  currentItem: any;
+  
+  ngOnInit(): void {
+    if(this.news.collection_of_news){
+    this.currentItem = this.news.collection_of_news.filter(item => {
+      return item.url.includes(this.news.id_of_item)
+        })[0]
+      }
+    }
+    
+  
 }

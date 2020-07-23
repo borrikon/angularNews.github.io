@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NewsServiceService } from '../news-service.service';
 
 @Component({
   selector: 'app-news-item',
@@ -10,8 +11,13 @@ export class NewsItemComponent implements OnInit {
 
   @Input() item
   
-  constructor() { }
+  
+  constructor(private news: NewsServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  getItemUrl(url){
+    this.news.getIdOfItem(url)
   }
 }

@@ -1,1 +1,15 @@
-<p>news-list works!</p>
+<div>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+        <mat-label>Search news</mat-label>
+        <input matInput name="search"  placeholder="some news" [(ngModel)]="searchStr">
+        </mat-form-field>
+    </form>
+    <div class='news-container'>
+        <app-news-item
+            *ngFor="let item of toRender() | search: searchStr"
+            [item]="item"
+            >
+        </app-news-item>
+    </div>
+</div>

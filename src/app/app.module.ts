@@ -10,11 +10,14 @@ import { AppComponent } from './app.component';
 import { NewsItemComponent } from './news-item/news-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NewsElementComponent } from './news-element/news-element.component';
+import { NewsListComponent } from './news-list/news-list.component';
+
 import { NewsServiceService } from './news-service.service';
 
 
 import { SearchPipe } from './search.pipe';
 
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 import { MaterialModule } from './material.module';
 import { MatInputModule } from '@angular/material/input';
@@ -23,11 +26,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule  } from '@angular/material/card';
 import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
-import { NewsListComponent } from './news-list/news-list.component';
 
 
 const appRoutes: Routes = [
-  {path: "", component: AppComponent},
+  {path: "", component: NewsListComponent},
   {path: "news", component: NewsElementComponent},
   {path: "**", component: NotFoundComponent}
 ]
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     NotFoundComponent,
     NewsElementComponent,
     SearchPipe,
-    NewsListComponent
+    NewsListComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    JwPaginationModule
   ],
   providers: [
     {
